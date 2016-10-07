@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-04T13:50:30Z" product-name="wishlist">
+		<header/>
+		<body>
+			<trans-unit id="tx_wishlist_domain_model_wish">
+				<source>Wish</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.subtitle">
+				<source>Subtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.is_multiple">
+				<source>Is Multiple</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.is_shared">
+				<source>Is Shared</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_wish.is_gifted">
+				<source>Is Gifted</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration">
+				<source>Registration</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration.lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration.amount">
+				<source>Amount</source>
+			</trans-unit>
+			<trans-unit id="tx_wishlist_domain_model_registration.gift">
+				<source>Gift</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

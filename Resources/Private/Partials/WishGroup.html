@@ -1,0 +1,16 @@
+<div class="four columns bottom-2 top-2">
+    <p style="text-align: center">
+        <f:if condition="{wishgroup.image}">
+            <f:image width="150c" height="150c" image="{wishgroup.image.originalResource}" class="wish-img" />
+        </f:if>
+    </p>
+</div>
+
+<div class="twelve columns bottom-2 top-2">
+    <h4 class="title">{wishgroup.title}</h4>
+    <p>
+        {wishgroup.subtitle}
+    </p>
+    <br/>
+    <f:render partial="Registration" arguments="{wishgroup: wishgroup}" />
+</div>

@@ -1,0 +1,74 @@
+<div class="registration">
+    <f:form class="wish-registration-form" action="register" name="registration" controller="Wish" pageType="666">
+        <f:if condition="{wish.price}">
+            <f:then>CHF {wish.price}.-</f:then>
+            <f:else>Freier Betrag</f:else>
+        </f:if>
+        <f:if condition="{wish.isShared}">
+            <f:if condition="{wish.amountGifted}>0">
+                (CHF {wish.amountGifted}.- bereits verschenkt)
+              </f:if>
+        </f:if>
+        <div>
+            <f:if condition="{wish.isGifted}">
+                <f:then>
+                    <span class="button de-button small normal wish-registration-alreadygifted" >
+                        Bereits verschenkt!
+                    </span>
+                </f:then>
+                <f:else>
+                    <f:if condition="{wish.isShared}">
+                        <f:then>
+                            <a href="#" onclick="return false;" class="button de-button small reverse wish-registration-showbutton" >
+                                Beteiligen
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <a href="#" onclick="return false;" class="button de-button small reverse wish-registration-showbutton" >
+                                Schenken
+                            </a>
+                        </f:else>
+                    </f:if>
+                    <div class="wish-registration-form-extended" style="display: none">
+                        <div class="error-message-container"></div>
+                        <div class="form-box" style="margin-bottom: 5px;">
+                            <f:form.textfield placeholder="Vorname" property="firstname" class="form-control ajax-input text required" />
+                        </div>
+                        <div class="form-box" style="margin-bottom: 5px;">
+                            <f:form.textfield placeholder="Nachname" property="lastname" class="form-control ajax-input text required" />
+                        </div>
+                        <div class="form-box" style="margin-bottom: 5px;">
+                            <f:form.textfield placeholder="E-Mail" property="email" class="form-control ajax-input text required email" />
+                        </div>
+                        <div class="form-box" style="margin-bottom: 5px;">
+                            <f:if condition="{wish.isShared}">
+                                <f:then>
+                                    <f:form.textfield placeholder="Betrag" property="amount" class="form-control ajax-input text required number" />
+                                </f:then>
+                                <f:else>
+                                    <f:form.hidden property="amount" value="{wish.price}"/>
+                                    <div class="form-control ajax-input">
+                                        CHF {wish.price}.-
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <f:form.hidden property="wish" value="{wish}" />
+
+                        <f:if condition="{wish.isShared}">
+                            <f:then>
+                                <f:form.submit value="Jetzt Beteiligen" class="button small reverse" />
+                            </f:then>
+                            <f:else>
+                                <f:form.submit value="Jetzt Schenken" class="button small reverse" />
+                            </f:else>
+                        </f:if>
+
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </f:form>
+</div>

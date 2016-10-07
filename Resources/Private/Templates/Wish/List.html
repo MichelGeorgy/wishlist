@@ -1,0 +1,38 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <!-- ICON -->
+    <div class="icon-title">
+        <div class="de-icon circle light large-size aligncenter">
+            <i class="de-icon-gift"></i>
+        </div>
+    </div>
+
+    <div class="container">
+        <f:flashMessages renderMode="div" />
+
+        <div class="row animation fadeIn">
+            <div class="col-md-offset-1 col-md-10">
+                <f:for each="{wishes}" as="wish" iteration="it">
+                    <div class="row" style="margin-bottom: 60px;">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <p style="text-align: center">
+                            <f:if condition="{wish.image}">
+                                    <f:image width="175c" height="175c" image="{wish.image.originalResource}" class="wish-img" style="width: 175px;height:175px;border-radius: 50%;margin-bottom: 20px;box-shadow: 0 0 0 8px rgba(50,50,50,0.1);-webkit-box-shadow: 0 0 0 8px rgba(50,50,50,0.1);-moz-box-shadow: 0 0 0 8px rgba(50,50,50,0.1);"/>
+                            </f:if>
+                            </p>
+                        </div>
+
+                        <div class="col-md-offset-1 col-md-5">
+                            <h4 class="title">{wish.title}</h4>
+                            <f:render partial="Registration" arguments="{wish: wish}" />
+                        </div>
+
+                        <div class="col-md-2"></div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </div>
+</f:section>

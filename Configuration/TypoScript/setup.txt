@@ -1,0 +1,110 @@
+
+plugin.tx_wishlist {
+	view {
+		templateRootPath = {$plugin.tx_wishlist.view.templateRootPath}
+		partialRootPath = {$plugin.tx_wishlist.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_wishlist.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_wishlist.persistence.storagePid}
+	}
+
+    settings {
+        email {
+            notification {
+                sender {
+                    name = Moni & Michel
+                    email =  hochzyt@georgy.ch
+                }
+                recipient = hochzyt@georgy.ch
+                subject = Geschenk Registration Hochtzeit Moni & Michel
+            }
+
+            confirmation {
+                sender {
+                    name = Moni & Michel
+                    email =  hochzyt@georgy.ch
+                }
+                recipient = hochzyt@georgy.ch
+                subject = Hochzeit Moni & Michel
+            }
+        }
+    }
+}
+
+plugin.tx_wishlist._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-wishlist table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-wishlist table th {
+		font-weight:bold;
+	}
+
+	.tx-wishlist table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+page {
+    # Inlude JavaScript files
+    #includeJSFooterlibs {
+    #    powermailJQuery = {$plugin.tx_powermail.settings.javascript.powermailJQuery}
+    #    powermailJQuery.external = 1
+    #}
+    includeJSFooter {
+        wishlist = EXT:wishlist/Resources/Public/JavaScripts/Wishlist.js
+    }
+}
+
+tx_wishlist_ajax = PAGE
+tx_wishlist_ajax {
+    typeNum = 666
+
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        additionalHeaders = Content-type: text/plain
+        no_cache = 1
+    }
+
+    100 = USER
+    100 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Tamtec
+        extensionName = Wishlist
+        pluginName = Wishlist
+        controller = Wish
+        switchableControllerActions {
+            Wish {
+                1 = register
+            }
+        }
+        settings =< plugin.tx_wishlist.settings
+        persistence =< plugin.tx_wishlist.persistence
+        features < plugin.tx_wishlist.features
+        legacy < plugin.tx_wishlist.legacy
+        view =< plugin.tx_wishlist.view
+    }
+}

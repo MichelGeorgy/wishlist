@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-04T13:50:30Z" product-name="wishlist">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="subtitle.description">
+				<source>subtitle</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="is_multiple.description">
+				<source>isMultiple</source>
+			</trans-unit>
+			<trans-unit id="is_shared.description">
+				<source>isShared</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="is_gifted.description">
+				<source>isGifted</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

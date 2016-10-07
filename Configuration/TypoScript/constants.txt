@@ -1,0 +1,15 @@
+
+plugin.tx_wishlist {
+	view {
+		# cat=plugin.tx_wishlist/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:wishlist/Resources/Private/Templates/
+		# cat=plugin.tx_wishlist/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:wishlist/Resources/Private/Partials/
+		# cat=plugin.tx_wishlist/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:wishlist/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_wishlist//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
