@@ -29,7 +29,7 @@ namespace Tamtec\Wishlist\Controller;
 
 
 use \Tamtec\Wishlist\Domain\Model\Registration;
-use \X4E\X4ebase\Utility\EmailUtility;
+use \X4e\X4ebase\Utility\EmailUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 /**
